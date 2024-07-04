@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
-
 module purge
 
 # load RStudio Server
 module load <%= context.Rserver %>
 
+# load R
+module load <%= context.Rapp %>
 
-
-# List loaded modules
-#module list
-#<%- end -%>
-
-
+#
+# Start RStudio Server
+#
 
 # PAM auth helper used by RStudio
 export RSTUDIO_AUTH="${PWD}/bin/auth"
