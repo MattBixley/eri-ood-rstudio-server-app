@@ -46,11 +46,13 @@ attributes:
     label: "RStudio-Server Version"
     options:
       - [ "2024.04.2-764", "RStudio-Server/2024.04.2-764" ]
+      - [ "2023.12.0-369", "RStudio-Server/2023.12.0-369" ]
   Rapp:
     widget: select
     label: "R Version"
     options:
       - [ "4.3.3", "R/4.3.3-foss-2023a" ]
+      - [ "4.3.2", "R/4.3.2-foss-2023a" ]
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
