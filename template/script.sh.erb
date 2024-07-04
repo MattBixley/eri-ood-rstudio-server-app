@@ -12,7 +12,11 @@ module load <%= context.Rapp %>
 #
 
 # PAM auth helper used by RStudio
-export RSTUDIO_AUTH="${PWD}/bin/auth"
+export WORKING_DIR="<%= session_dir %>"
+export RSTUDIO_AUTH="$WORKING_DIR/bin/auth"
+
+#Try above first as auth wasn't working correctly with the following
+#export RSTUDIO_AUTH="${PWD}/bin/auth"
 
 # Generate an `rsession` wrapper script
 export RSESSION_WRAPPER_FILE="${PWD}/rsession.sh"
