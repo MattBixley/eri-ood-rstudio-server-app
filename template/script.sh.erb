@@ -12,7 +12,7 @@ module load <%= context.Rapp %>
 #
 
 # PAM auth helper used by RStudio
-#export WORKING_DIR="<%= session_dir %>"
+
 export WORKING_DIR="<%= session.staged_root %>"
 export RSTUDIO_AUTH="$WORKING_DIR/bin/auth"
 
