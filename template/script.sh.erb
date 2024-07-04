@@ -20,14 +20,14 @@ export RSTUDIO_AUTH="$WORKING_DIR/bin/auth"
 #export RSTUDIO_AUTH="${PWD}/bin/auth"
 
 # Generate an `rsession` wrapper script
-export RSESSION_WRAPPER_FILE="${PWD}/rsession.sh"
+export RSESSION_WRAPPER_FILE="$WORKING_DIR/rsession.sh"
 (
 umask 077
 sed 's/^ \{2\}//' > "${RSESSION_WRAPPER_FILE}" << EOL
   #!/usr/bin/env bash
 
   # Log all output from this script
-  export RSESSION_LOG_FILE="${PWD}/rsession.log"
+  export RSESSION_LOG_FILE="$WORKING_DIR/rsession.log"
   exec &>>"\${RSESSION_LOG_FILE}"
 
   # Launch the original command
