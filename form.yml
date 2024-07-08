@@ -53,6 +53,7 @@ attributes:
     options:
       - [ "4.3.3", "R/4.3.3-foss-2023a" ]
       - [ "4.3.2", "R/4.3.2-foss-2023a" ]
+      - [ "R-Geo/4.3.2", "R-Geo/4.3.2-foss-2023a" ]
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
