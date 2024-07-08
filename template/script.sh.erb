@@ -76,5 +76,6 @@ rserver \
   --auth-encrypt-password 0 \
   --rsession-path "${RSESSION_WRAPPER_FILE}" \
   --server-data-dir "${TMPDIR}" \
+  --secure-cookie-key-file "${TMPDIR}/rstudio-server/secure-cookie-key"
   --database-config-file "${DBCONF}" \
   --server-user $(whoami)
