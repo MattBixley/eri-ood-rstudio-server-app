@@ -12,7 +12,7 @@ module load <%= context.Rapp %>
 #
 
 # PAM auth helper used by RStudio
-echo "TMPDIR=/home/"$USER"/rstudio_tmp" > .Renviron
+TMPDIR="$(mktemp -d)"
 export WORKING_DIR="<%= session.staged_root %>"
 export RSTUDIO_AUTH="$WORKING_DIR/bin/auth"
 
