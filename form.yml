@@ -50,7 +50,7 @@ attributes:
     widget: select
     label: "R Version"
     options:
-      - [ "4.3.3", "R/4.3.3-foss-2023a" ]
+  #   - [ "4.3.3", "R/4.3.3-foss-2023a" ]
       - [ "4.3.2", "R/4.3.2-foss-2023a" ]
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
