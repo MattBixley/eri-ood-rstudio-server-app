@@ -46,14 +46,12 @@ attributes:
     label: "RStudio-Server Version"
     options:
       - [ "2024.04.2-764", "RStudio-Server/2024.04.2-764" ]
-      - [ "2023.12.0-369", "RStudio-Server/2023.12.0-369" ]
   Rapp:
     widget: select
     label: "R Version"
     options:
       - [ "4.3.3", "R/4.3.3-foss-2023a" ]
       - [ "4.3.2", "R/4.3.2-foss-2023a" ]
-      - [ "R-Geo/4.3.2", "R-Geo/4.3.2-foss-2023a" ]
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
@@ -62,7 +60,7 @@ attributes:
   bc_queue:
     value: interactive
   bc_num_hours:
-    max: 24
+    max: 8
     min: 1
     step: 1
     value: 1
@@ -74,12 +72,11 @@ attributes:
     widget: number_field
   num_mem:
     label: Memory per job (GB)
-    max: 64
-    min: 2
+    max: 8
+    min: 1
     step: 1
-    value: 2
+    value: 1
     widget: number_field
-
 
 # All of the attributes that make up the Dashboard form (in respective order),
 # and made available to the submit configuration file and the template ERB
