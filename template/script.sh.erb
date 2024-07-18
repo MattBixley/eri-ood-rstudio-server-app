@@ -11,8 +11,8 @@ module load <%= context.Rapp %>
 module load Python/3.11.6-foss-2023a
 module load TeXLive/2022
 
-#RStudioServer doesn't inherit "ulimit -s" from system config /etc/security/limits.d/custom.conf
-#Therefore, we are setting it here
+# RStudioServer doesn't inherit "ulimit -s" from system config /etc/security/limits.d/custom.conf
+# Therefore, we are setting it here
 
 ulimit -s unlimited
 
@@ -70,10 +70,8 @@ chmod 700 "${DBCONF}"
 # Set working directory to home directory
 cd "${HOME}"
 
-
 # Output debug info
 module list
-
 
 # Launch the RStudio Server
 echo "Starting up rserver..."
