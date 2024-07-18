@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-
-#proxy
-export https_proxy="https://10.29.107.161:3128/"
-export http_proxy="http://10.29.107.161:3128/"
-
-# 10.29.107.161:3128
-# 10.1.112.161:3128
-
 module purge
 
 # load RStudio Server
@@ -19,8 +11,8 @@ module load <%= context.Rapp %>
 module load Python/3.11.6-foss-2023a
 module load TeXLive/2022
 
-#RStudioServer doesn't inherit "ulimit -s" from system config /etc/security/limits.d/custom.conf
-#Therefore, we are setting it here
+# RStudioServer doesn't inherit "ulimit -s" from system config /etc/security/limits.d/custom.conf
+# Therefore, we are setting it here
 
 ulimit -s unlimited
 
@@ -32,10 +24,6 @@ ulimit -s unlimited
 TMPDIR="$(mktemp -d)"
 export WORKING_DIR="<%= session.staged_root %>"
 export RSTUDIO_AUTH="$WORKING_DIR/bin/auth"
-
-# Squid Proxy to allow access to CRAN/GIT
-export https_proxy="https://10.1.112.161:3128"
-export http_proxy="http://10.1.112.161:3128"
 
 #Try above first as auth wasn't working correctly with the following
 #export RSTUDIO_AUTH="${PWD}/bin/auth"
@@ -82,10 +70,8 @@ chmod 700 "${DBCONF}"
 # Set working directory to home directory
 cd "${HOME}"
 
-
 # Output debug info
 module list
-
 
 # Launch the RStudio Server
 echo "Starting up rserver..."
