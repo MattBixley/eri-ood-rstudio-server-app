@@ -62,11 +62,17 @@ chmod 700 "${DBCONF}"
 # Set working directory to home directory
 cd "${HOME}"
 
-# Create a unique $TMPDIR for runtime files
-#export TMPDIR="$(mktemp -d)"
 
 # Output debug info
 module list
+
+#propagate http_proxy and https_proxy via ~/.Renviron
+#export the variables with export http...= did not work
+cat > ~/.Renviron <<EOF
+https_proxy=https://10.1.112.161:3128
+http_proxy=http://10.1.112.161:3128
+EOF
+
 
 # Launch the RStudio Server
 echo "Starting up rserver..."
