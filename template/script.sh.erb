@@ -19,6 +19,11 @@ module load <%= context.Rapp %>
 module load Python/3.11.6-foss-2023a
 module load TeXLive/2022
 
+#RStudioServer doesn't inherit "ulimit -s" from system config /etc/security/limits.d/custom.conf
+#Therefore, we are setting it here
+
+ulimit -s unlimited
+
 #
 # Start RStudio Server
 #
@@ -46,6 +51,14 @@ sed 's/^ \{2\}//' > "${RSESSION_WRAPPER_FILE}" << EOL
   export RSESSION_LOG_FILE="$WORKING_DIR/rsession.log"
   exec &>>"\${RSESSION_LOG_FILE}"
 
+  #pass on {http,https}_proxy : This replaces the original solution which 
+  #was to define the variables on ~/.Renviron. Not recommended as it will intrdocue
+  #a redundancy to R consoles used via ssh sessions
+  https_proxy=https://10.1.112.161:3128
+  http_proxy=http://10.1.112.161:3128
+  export https_proxy="https://10.1.112.161:3128"
+  export http_proxy="http://10.1.112.161:3128" 
+
   # Launch the original command
   echo "Launching rsession..."
   set -x
@@ -69,11 +82,10 @@ chmod 700 "${DBCONF}"
 # Set working directory to home directory
 cd "${HOME}"
 
-# Create a unique $TMPDIR for runtime files
-#export TMPDIR="$(mktemp -d)"
 
 # Output debug info
 module list
+
 
 # Launch the RStudio Server
 echo "Starting up rserver..."
