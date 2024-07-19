@@ -50,6 +50,7 @@ attributes:
     widget: select
     label: "R Version"
     options:
+      - [ "4.4.1", "R/4.4.1-foss-2023a" ]
       - [ "4.3.3", "R/4.3.3-foss-2023a" ]
       - [ "4.3.2", "R/4.3.2-foss-2023a" ]
 
@@ -67,12 +68,13 @@ attributes:
     widget: number_field
   num_cores:
     label: Number of cores
+    max: 16
     min: 1
     value: 2
     widget: number_field
   num_mem:
     label: Memory per job (GB)
-    max: 8
+    max: 32
     min: 1
     step: 1
     value: 1
