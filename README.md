@@ -1,6 +1,8 @@
 # eri-ood-rstudio-server
 OOD RStudio-server for app for eRI ( beta)
 
+![icon.png](RStudio)
+
 ## Notes on `template/script.sh.erb` 
 
 * `--server-data-dir "${TMPDIR}"` redirects output of PIDs from `/var/run/rstudio-rsession` to `${TMPDIR}`.
