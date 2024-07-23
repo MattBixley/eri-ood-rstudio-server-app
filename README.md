@@ -1,9 +1,9 @@
 # eri-ood-rstudio-server
-OOD RStudio-server for app for eRI ( beta)
-<p align="left" width="100%">
+
+<p align="left" width="20%">
     <img width="20%" src="https://github.com/nesi/eri-easyconfigs/blob/main/resources/eri_hex.png"> 
 </p>
-
+OOD RStudio-server for app for eRI ( beta)
 
 ## Notes on `template/script.sh.erb` 
 
