@@ -39,14 +39,6 @@ sed 's/^ \{2\}//' > "${RSESSION_WRAPPER_FILE}" << EOL
   export RSESSION_LOG_FILE="$WORKING_DIR/rsession.log"
   exec &>>"\${RSESSION_LOG_FILE}"
 
-  #pass on {http,https}_proxy : This replaces the original solution which 
-  #was to define the variables on ~/.Renviron. Not recommended as it will intrdocue
-  #a redundancy to R consoles used via ssh sessions
-#  https_proxy=https://10.1.112.161:3128
-#  http_proxy=http://10.1.112.161:3128
-#  export https_proxy="https://10.1.112.161:3128"
-#  export http_proxy="http://10.1.112.161:3128" 
-
   # Launch the original command
   echo "Launching rsession..."
   set -x
