@@ -19,9 +19,9 @@ form:
   - num_cores
   - num_mem
   - node
-description: Request a RStudio-Server
+description: Request an RStudio-Server
 submit: submit.yml.erb
-title: RStudio-Server - staging
+title: RStudio
 
 
 # Define attribute values that aren't meant to be modified by the user within
@@ -61,20 +61,20 @@ attributes:
   bc_queue:
     value: interactive
   bc_num_hours:
-    max: 8
+    max: 16
     min: 1
     step: 1
     value: 1
     widget: number_field
   num_cores:
     label: Number of cores
-    max: 16
+    max: 32
     min: 1
     value: 2
     widget: number_field
   num_mem:
     label: Memory per job (GB)
-    max: 32
+    max: 64
     min: 1
     step: 1
     value: 1

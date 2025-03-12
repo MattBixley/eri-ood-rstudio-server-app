@@ -1,5 +1,5 @@
 ---
-name: RStudio Server
+name: RStudio
 category: Interactive Apps
 role: batch_connect
 description: |
