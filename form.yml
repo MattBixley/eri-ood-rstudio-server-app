@@ -50,6 +50,7 @@ attributes:
     widget: select
     label: "R Version"
     options:
+      - [ "4.4.3", "R/.4.4.3-rocker" ]
       - [ "4.4.1", "R/4.4.1-foss-2023a" ]
       - [ "4.3.3", "R/4.3.3-foss-2023a" ]
       - [ "4.3.2", "R/4.3.2-foss-2023a" ]
