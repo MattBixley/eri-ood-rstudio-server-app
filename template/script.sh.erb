@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Add the missing module path
+export MODULEPATH="/agr/persist/apps/eri_rocky8/modules/all:$MODULEPATH"
+
 module purge
 
 # load RStudio Server
