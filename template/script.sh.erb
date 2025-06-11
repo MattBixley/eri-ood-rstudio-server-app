@@ -77,4 +77,6 @@ rserver \
   --server-data-dir "${TMPDIR}" \
   --secure-cookie-key-file "${TMPDIR}/rstudio-server/secure-cookie-key" \
   --database-config-file "${DBCONF}" \
+  --auth-timeout-minutes=0 \
+  --auth-stay-signed-in-days=30 \
   --server-user $(whoami)
